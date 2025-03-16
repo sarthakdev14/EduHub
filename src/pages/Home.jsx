@@ -61,10 +61,10 @@ const Home = () => {
             crack top exams, and secure your dream college.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/webinars" className="btn-primary">
+            <Link to="/mentors-webinars" className="btn-primary">
               Join Free Masterclass
             </Link>
-            <Link to="/mentors" className="btn-secondary">
+            <Link to="/mentors-webinars" className="btn-secondary">
               Meet Our Mentors
             </Link>
           </div>

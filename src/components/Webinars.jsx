@@ -1,6 +1,10 @@
 import { FaCalendar, FaClock, FaUsers, FaRupeeSign, FaCheckCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 const Webinars = () => {
+  const navigate = useNavigate();
+
   const webinars = [
     {
       id: 1,
@@ -96,7 +100,8 @@ const Webinars = () => {
                 </ul>
               </div>
 
-              <button className="w-full mt-6 bg-primary text-white py-3 rounded-md hover:bg-secondary transition-all font-semibold">
+              <button className="w-full mt-6 bg-primary text-white py-3 rounded-md hover:bg-secondary transition-all font-semibold" 
+               onClick={() => navigate(`/register?title=${encodeURIComponent(title)}`)} >
                 Register Now
               </button>
             </div>
