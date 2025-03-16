@@ -13,7 +13,8 @@ const Navbar = () => {
     { id: 2, text: 'Exams', path: '/exams' },
     { id: 3, text: 'Mentors & Webinars', path: '/mentors-webinars' },
     { id: 4, text: 'Colleges', path: '/colleges' },
-    { id: 5, text: 'GuideBot', path: '/contact' },
+    { id: 5, text: 'Placement', path: '/placement' },
+    { id: 6, text: 'GuideBot', path: '/contact' },
   ];
 
   useEffect(() => {

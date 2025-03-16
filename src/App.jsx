@@ -6,6 +6,7 @@ import MentorsAndWebinars from './pages/MentorsAndWebinars';
 import Colleges from './pages/Colleges';
 import Contact from './pages/Contact';
 import Register from './pages/Register';
+import Placement from './pages/Placement';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/mentors-webinars" element={<MentorsAndWebinars />} />
           <Route path="/colleges" element={<Colleges />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path='/placement' element={<Placement/>}/>
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>
