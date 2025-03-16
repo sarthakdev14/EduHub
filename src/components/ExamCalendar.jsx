@@ -7,8 +7,8 @@ const ExamCalendar = () => {
   const exams = [
     {
       id: 1,
-      name: "JEE Main 2024 Session 2",
-      date: "March 10-15, 2024",
+      name: "JEE Main 2025 Session 2",
+      date: "March 10-15, 2025",
       registration: "Closed",
       status: "Upcoming",
       important: [
@@ -19,8 +19,8 @@ const ExamCalendar = () => {
     },
     {
       id: 2,
-      name: "BITSAT 2024",
-      date: "March 20-25, 2024",
+      name: "BITSAT 2025",
+      date: "March 20-25, 2025",
       registration: "Open till March 10",
       status: "Registration Open",
       important: [
@@ -31,8 +31,8 @@ const ExamCalendar = () => {
     },
     {
       id: 3,
-      name: "VITEEE 2024",
-      date: "April 5-10, 2024",
+      name: "VITEEE 2025",
+      date: "April 5-10, 2025",
       registration: "Open till March 30",
       status: "Registration Open",
       important: [
@@ -90,10 +90,6 @@ const ExamCalendar = () => {
                   ))}
                 </ul>
               </div>
-
-              <button className="w-full mt-6 bg-primary text-white py-3 rounded-md hover:bg-secondary transition-all font-semibold">
-                View Details
-              </button>
             </div>
           ))}
         </div>

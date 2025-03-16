@@ -108,12 +108,6 @@ const Webinars = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 text-lg">Looking for personalized guidance?</p>
-          <button className="mt-4 px-8 py-3 border-2 border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-all font-semibold">
-            Schedule 1:1 Counseling
-          </button>
-        </div>
       </div>
     </div>
   );

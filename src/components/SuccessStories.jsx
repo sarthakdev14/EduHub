@@ -108,12 +108,7 @@ const SuccessStories = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 text-lg mb-4">Want to share your success story?</p>
-          <button className="px-8 py-3 bg-primary text-white rounded-md hover:bg-secondary transition-all font-semibold">
-            Submit Your Story
-          </button>
-        </div>
+        
       </div>
     </div>
   );
