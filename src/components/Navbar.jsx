@@ -1,104 +1,87 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const links = [
     { id: 1, text: 'Home', path: '/' },
     { id: 2, text: 'Exams', path: '/exams' },
-    { id: 3, text: 'Mentors', path: '/mentors' },
-    { id: 4, text: 'Webinars', path: '/webinars' },
-    { id: 5, text: 'Colleges', path: '/colleges' },
-    { id: 6, text: 'Contact', path: '/contact' },
+    { id: 3, text: 'Mentors & Webinars', path: '/mentors-webinars' },
+    { id: 4, text: 'Colleges', path: '/colleges' },
+    { id: 5, text: 'GuideBot', path: '/contact' },
   ];
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    if (darkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/90 dark:bg-background-dark/90 backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex-shrink-0"
+            className="flex items-center"
           >
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                <span className="text-xl font-bold text-white">CR</span>
+              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                CollegeRaahi
+                College Raahi
               </span>
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-1">
             {links.map(({ id, text, path }) => (
               <Link
                 key={id}
                 to={path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
                   location.pathname === path
-                    ? 'text-primary dark:text-primary'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                    ? 'text-primary dark:text-primary bg-primary/5 dark:bg-primary/10'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10'
                 }`}
               >
                 {text}
                 {location.pathname === path && (
                   <motion.div
-                    layoutId="underline"
-                    className="absolute left-0 right-0 h-0.5 bg-primary bottom-0"
+                    layoutId="navIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    initial={false}
                   />
                 )}
               </Link>
             ))}
-            
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {darkMode ? (
-                <FaSun className="text-yellow-400 w-5 h-5" />
-              ) : (
-                <FaMoon className="text-gray-600 w-5 h-5" />
-              )}
-            </button>
+            <div className="ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
+              <ThemeToggle />
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mr-2"
-              aria-label="Toggle theme"
-            >
-              {darkMode ? (
-                <FaSun className="text-yellow-400 w-5 h-5" />
-              ) : (
-                <FaMoon className="text-gray-600 w-5 h-5" />
-              )}
-            </button>
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
             <button
               onClick={() => setNav(!nav)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none"
+              className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors"
+              aria-label="Toggle menu"
             >
               {nav ? (
                 <XMarkIcon className="h-6 w-6" />
@@ -110,32 +93,34 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: nav ? 1 : 0, y: nav ? 0 : -20 }}
-        transition={{ duration: 0.2 }}
-        className={`${
-          nav ? 'block' : 'hidden'
-        } md:hidden absolute w-full bg-white dark:bg-gray-900 shadow-lg`}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          {links.map(({ id, text, path }) => (
-            <Link
-              key={id}
-              to={path}
-              onClick={() => setNav(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                location.pathname === path
-                  ? 'bg-primary/5 dark:bg-primary/10 text-primary'
-                  : 'text-gray-600 dark:text-gray-300 hover:bg-primary/5 dark:hover:bg-primary/10 hover:text-primary'
-              }`}
-            >
-              {text}
-            </Link>
-          ))}
-        </div>
-      </motion.div>
+      <AnimatePresence>
+        {nav && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-700"
+          >
+            <div className="px-4 py-2 space-y-1">
+              {links.map(({ id, text, path }) => (
+                <Link
+                  key={id}
+                  to={path}
+                  onClick={() => setNav(false)}
+                  className={`block px-4 py-2 rounded-lg text-base font-medium transition-colors ${
+                    location.pathname === path
+                      ? 'bg-primary/5 dark:bg-primary/10 text-primary'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-primary/5 dark:hover:bg-primary/10 hover:text-primary'
+                  }`}
+                >
+                  {text}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Exams from './pages/Exams';
-import Mentors from './pages/Mentors';
-import Webinars from './pages/Webinars';
+import MentorsAndWebinars from './pages/MentorsAndWebinars';
 import Colleges from './pages/Colleges';
 import Contact from './pages/Contact';
 
@@ -15,8 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/exams" element={<Exams />} />
-          <Route path="/mentors" element={<Mentors />} />
-          <Route path="/webinars" element={<Webinars />} />
+          <Route path="/mentors-webinars" element={<MentorsAndWebinars />} />
           <Route path="/colleges" element={<Colleges />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

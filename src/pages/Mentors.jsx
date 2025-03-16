@@ -18,7 +18,7 @@ const Mentors = () => {
           className="text-center"
         >
           <h1 className="heading-gradient mb-6">Our Expert Mentors</h1>
-          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
             Learn from experienced professors and successful alumni
           </p>
         </motion.div>

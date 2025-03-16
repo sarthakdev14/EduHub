@@ -5,7 +5,10 @@ import {
   AcademicCapIcon, 
   UserGroupIcon, 
   ChartBarIcon, 
-  BuildingLibraryIcon 
+  BuildingLibraryIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
 
 const Home = () => {
@@ -53,7 +56,7 @@ const Home = () => {
           <h1 className="heading-gradient mb-6">
             Navigate Your Engineering Dreams
           </h1>
-          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-blue-600 max-w-2xl mx-auto mb-8">
             Your personalized compass for engineering entrance exams. Get expert guidance,
             crack top exams, and secure your dream college.
           </p>
@@ -127,6 +130,41 @@ const Home = () => {
             </div>
           </div>
         </motion.div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="section-padding bg-white">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">Get in Touch</h2>
+            <p className="text-gray-600 text-lg">We're here to help you succeed</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-primary/5 p-8 rounded-xl text-center">
+              <PhoneIcon className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+              <p className="text-gray-600">+91 98765 43210</p>
+              <p className="text-gray-600">Mon-Sat, 9AM-8PM IST</p>
+            </div>
+
+            <div className="bg-primary/5 p-8 rounded-xl text-center">
+              <EnvelopeIcon className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+              <p className="text-gray-600">support@collegeraahi.com</p>
+              <p className="text-gray-600">24/7 Email Support</p>
+            </div>
+
+            <div className="bg-primary/5 p-8 rounded-xl text-center">
+              <ChatBubbleLeftRightIcon className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Chat with AI Guide</h3>
+              <p className="text-gray-600">Get instant answers</p>
+              <Link to="/contact" className="text-primary hover:text-secondary mt-2 inline-block">
+                Start Chat →
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
