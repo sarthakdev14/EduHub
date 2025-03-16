@@ -18,7 +18,7 @@ const Webinars = () => {
           className="text-center"
         >
           <h1 className="heading-gradient mb-6">Free Expert Sessions</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto mb-12">
             Join our comprehensive sessions covering all engineering entrance exams
           </p>
         </motion.div>

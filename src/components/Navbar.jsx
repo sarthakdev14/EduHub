@@ -42,7 +42,7 @@ const Navbar = () => {
           >
             <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                EduHub
+                CollegeRaahi
               </span>
             </Link>
           </motion.div>

@@ -18,7 +18,7 @@ const Contact = () => {
           className="text-center"
         >
           <h1 className="heading-gradient mb-6">Get in Touch</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto mb-12">
             Have questions? We're here to help you succeed
           </p>
         </motion.div>

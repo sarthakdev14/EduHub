@@ -53,7 +53,7 @@ const Home = () => {
           <h1 className="heading-gradient mb-6">
             Navigate Your Engineering Dreams
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto mb-8">
             Your personalized compass for engineering entrance exams. Get expert guidance,
             crack top exams, and secure your dream college.
           </p>

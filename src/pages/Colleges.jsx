@@ -19,7 +19,7 @@ const Colleges = () => {
           className="text-center"
         >
           <h1 className="heading-gradient mb-6">Top Engineering Colleges</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-indigo-700 font-[600] max-w-2xl mx-auto">
             Compare colleges, explore rankings, and make informed decisions about your future
           </p>
         </motion.div>
