@@ -4,6 +4,10 @@ const Contact = () => {
   return (
     <div name="contact" className="w-full py-20 bg-white">
       <div className="max-w-screen-xl mx-auto p-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-primary">Get in Touch</h2>
+          <p className="text-gray-600 mt-4 text-lg">Have questions? We're here to help you succeed</p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-primary/5 p-8 rounded-xl">
