@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "type": "module",  
-  "main": "server.js",
+  "main": "server_backend.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server_backend.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
