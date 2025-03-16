@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -71,13 +70,9 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <div className="ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
-              <ThemeToggle />
-            </div>
           </div>
 
           <div className="md:hidden flex items-center gap-4">
-            <ThemeToggle />
             <button
               onClick={() => setNav(!nav)}
               className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors"
